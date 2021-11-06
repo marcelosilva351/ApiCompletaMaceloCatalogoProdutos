@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompleteApiMarceloCatalog", "CompleteApiMarceloCatalog\CompleteApiMarceloCatalog.csproj", "{0D7C6536-EFF4-43C0-B911-486261490927}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD943791-9348-4106-AD03-41A2D493834A} = {BD943791-9348-4106-AD03-41A2D493834A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{BD943791-9348-4106-AD03-41A2D493834A}"
 EndProject
