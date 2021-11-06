@@ -1,0 +1,48 @@
+Api de catalogo de produtos, o objeto desta api é fazer conseguir enviar requisições para adicionar e receber:
+produtos, categorias, vendas e clientes
+Neste projeto tentei usar a arquitetura Ddd
+as aplicações do projeto são:
+Data onde esta sendo persistido os dados, foi usado o pacote do entity framework core junto com o identity para gerar as tabelas de usuario no banco
+a camada de negocio onde estão os serviços que vão usar as classes de repositorio e criar a logica tanto para persistir quanto para retornar os dados
+as entidades estão sendo retornadas e criadas atravas de Dto's 
+na aplicação estão nossas controllers onde vão comandar as requisições e ir até os services trazer nossa logica
+as requisições so podem ser feitas atraves de usuarios logados que estão enviando na requsição um Token jwt
+os usuarios são criados a partir de identity, atraves do userManeger e do RoleMenegener nos conseguimos criar um usuario e dizer seu papel 
+
+EndPonints - 
+
+[Route("v1/produtos")]
+Produtos: 
+ObterProdutos[HttpGet] - tras os produtos do banco de dados;
+[HttpGet{id}] - tras 1 produto atraves do Id
+[HttpPut("{id}")] - atualiza um produto atraves do id
+[HttpPost("CriarProduto")] - adiciona um produto no banco
+[HttpDelete("{id}")] - exclui um produto do branco 
+
+[Route("v1/categorias")]
+Produtos: 
+ObterCategorias[HttpGet] - tras as categorias do banco de dados;
+[HttpGet{id}] - tras 1 categorias atraves do Id
+[HttpPut("{id}")] - atualiza uma categoria atraves do id
+[HttpPost("CriarProduto")] - adiciona uma categoria no banco
+[HttpDelete("{id}")] - exclui um produto do banco
+
+[Route("v1/users")]
+Usuarios :
+[HttpPost("Registrar") - Adiciona um usuario ao banco
+[HttpPost("Logar")] adiciona um usuario ao banco e retorna o usuario + token jwt
+
+
+[Route("v1/clientes")]
+clientes: 
+ObterClientes[HttpGet] - tras os clientes do banco de dados;
+[HttPost] - adiciona um cliente ao banco
+
+[Route("v1/vendas")]
+Vendas: 
+[HttpGet] - tras as vendas seus clientes e os produtos da venda
+[HttpPost] adiciona uma venda
+
+
+
+ 
